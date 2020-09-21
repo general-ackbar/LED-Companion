@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E7489A22517D13D00D6A46D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7489A12517D13D00D6A46D /* AppDelegate.m */; };
+		8E7489A52517D13D00D6A46D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7489A42517D13D00D6A46D /* SceneDelegate.m */; };
+		8E7489A82517D13D00D6A46D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7489A72517D13D00D6A46D /* ViewController.m */; };
+		8E7489AB2517D13D00D6A46D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E7489A92517D13D00D6A46D /* Main.storyboard */; };
+		8E7489AD2517D13F00D6A46D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E7489AC2517D13F00D6A46D /* Assets.xcassets */; };
+		8E7489B02517D13F00D6A46D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E7489AE2517D13F00D6A46D /* LaunchScreen.storyboard */; };
+		8E7489B32517D13F00D6A46D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7489B22517D13F00D6A46D /* main.m */; };
+		8E98B9242518C706005170A2 /* WipeLED-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E98B91E2518C706005170A2 /* WipeLED-white.png */; };
+		8E98B9252518C706005170A2 /* LoadImage-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E98B91F2518C706005170A2 /* LoadImage-white.png */; };
+		8E98B9262518C706005170A2 /* WipeLED-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E98B9202518C706005170A2 /* WipeLED-black.png */; };
+		8E98B9272518C706005170A2 /* iPhoneToLED-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E98B9212518C706005170A2 /* iPhoneToLED-black.png */; };
+		8E98B9282518C706005170A2 /* iPhoneToLED-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E98B9222518C706005170A2 /* iPhoneToLED-white.png */; };
+		8E98B9292518C706005170A2 /* LoadImage-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E98B9232518C706005170A2 /* LoadImage-black.png */; };
+		8E98B92C2518C71C005170A2 /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E98B92B2518C71C005170A2 /* images.png */; };
+		8EB065232517E2DE00FDFEDC /* Communicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB065212517E2DE00FDFEDC /* Communicator.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8E74899D2517D13D00D6A46D /* LED Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LED Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E7489A02517D13D00D6A46D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8E7489A12517D13D00D6A46D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8E7489A32517D13D00D6A46D /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		8E7489A42517D13D00D6A46D /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		8E7489A62517D13D00D6A46D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8E7489A72517D13D00D6A46D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8E7489AA2517D13D00D6A46D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8E7489AC2517D13F00D6A46D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E7489AF2517D13F00D6A46D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8E7489B12517D13F00D6A46D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E7489B22517D13F00D6A46D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8E98B91E2518C706005170A2 /* WipeLED-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WipeLED-white.png"; sourceTree = "<group>"; };
+		8E98B91F2518C706005170A2 /* LoadImage-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoadImage-white.png"; sourceTree = "<group>"; };
+		8E98B9202518C706005170A2 /* WipeLED-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WipeLED-black.png"; sourceTree = "<group>"; };
+		8E98B9212518C706005170A2 /* iPhoneToLED-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhoneToLED-black.png"; sourceTree = "<group>"; };
+		8E98B9222518C706005170A2 /* iPhoneToLED-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhoneToLED-white.png"; sourceTree = "<group>"; };
+		8E98B9232518C706005170A2 /* LoadImage-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoadImage-black.png"; sourceTree = "<group>"; };
+		8E98B92B2518C71C005170A2 /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = images.png; sourceTree = "<group>"; };
+		8EB065212517E2DE00FDFEDC /* Communicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Communicator.m; sourceTree = "<group>"; };
+		8EB065222517E2DE00FDFEDC /* Communicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Communicator.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E74899A2517D13D00D6A46D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8E7489942517D13C00D6A46D = {
+			isa = PBXGroup;
+			children = (
+				8E74899F2517D13D00D6A46D /* LED Companion */,
+				8E74899E2517D13D00D6A46D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8E74899E2517D13D00D6A46D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E74899D2517D13D00D6A46D /* LED Companion.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E74899F2517D13D00D6A46D /* LED Companion */ = {
+			isa = PBXGroup;
+			children = (
+				8E98B91D2518C6ED005170A2 /* Assets */,
+				8EB065222517E2DE00FDFEDC /* Communicator.h */,
+				8EB065212517E2DE00FDFEDC /* Communicator.m */,
+				8E7489A02517D13D00D6A46D /* AppDelegate.h */,
+				8E7489A12517D13D00D6A46D /* AppDelegate.m */,
+				8E7489A32517D13D00D6A46D /* SceneDelegate.h */,
+				8E7489A42517D13D00D6A46D /* SceneDelegate.m */,
+				8E7489A62517D13D00D6A46D /* ViewController.h */,
+				8E7489A72517D13D00D6A46D /* ViewController.m */,
+				8E7489A92517D13D00D6A46D /* Main.storyboard */,
+				8E7489AC2517D13F00D6A46D /* Assets.xcassets */,
+				8E7489AE2517D13F00D6A46D /* LaunchScreen.storyboard */,
+				8E7489B12517D13F00D6A46D /* Info.plist */,
+				8E7489B22517D13F00D6A46D /* main.m */,
+			);
+			path = "LED Companion";
+			sourceTree = "<group>";
+		};
+		8E98B91D2518C6ED005170A2 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8E98B9212518C706005170A2 /* iPhoneToLED-black.png */,
+				8E98B9222518C706005170A2 /* iPhoneToLED-white.png */,
+				8E98B9232518C706005170A2 /* LoadImage-black.png */,
+				8E98B91F2518C706005170A2 /* LoadImage-white.png */,
+				8E98B9202518C706005170A2 /* WipeLED-black.png */,
+				8E98B91E2518C706005170A2 /* WipeLED-white.png */,
+				8E98B92B2518C71C005170A2 /* images.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E74899C2517D13D00D6A46D /* LED Companion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E7489B62517D13F00D6A46D /* Build configuration list for PBXNativeTarget "LED Companion" */;
+			buildPhases = (
+				8E7489992517D13D00D6A46D /* Sources */,
+				8E74899A2517D13D00D6A46D /* Frameworks */,
+				8E74899B2517D13D00D6A46D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LED Companion";
+			productName = "LED Companion";
+			productReference = 8E74899D2517D13D00D6A46D /* LED Companion.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8E7489952517D13C00D6A46D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					8E74899C2517D13D00D6A46D = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = 8E7489982517D13C00D6A46D /* Build configuration list for PBXProject "LED Companion" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8E7489942517D13C00D6A46D;
+			productRefGroup = 8E74899E2517D13D00D6A46D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E74899C2517D13D00D6A46D /* LED Companion */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E74899B2517D13D00D6A46D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E98B9242518C706005170A2 /* WipeLED-white.png in Resources */,
+				8E98B92C2518C71C005170A2 /* images.png in Resources */,
+				8E98B9282518C706005170A2 /* iPhoneToLED-white.png in Resources */,
+				8E7489B02517D13F00D6A46D /* LaunchScreen.storyboard in Resources */,
+				8E98B9252518C706005170A2 /* LoadImage-white.png in Resources */,
+				8E98B9272518C706005170A2 /* iPhoneToLED-black.png in Resources */,
+				8E7489AD2517D13F00D6A46D /* Assets.xcassets in Resources */,
+				8E98B9262518C706005170A2 /* WipeLED-black.png in Resources */,
+				8E7489AB2517D13D00D6A46D /* Main.storyboard in Resources */,
+				8E98B9292518C706005170A2 /* LoadImage-black.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E7489992517D13D00D6A46D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E7489A82517D13D00D6A46D /* ViewController.m in Sources */,
+				8E7489A22517D13D00D6A46D /* AppDelegate.m in Sources */,
+				8E7489B32517D13F00D6A46D /* main.m in Sources */,
+				8E7489A52517D13D00D6A46D /* SceneDelegate.m in Sources */,
+				8EB065232517E2DE00FDFEDC /* Communicator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8E7489A92517D13D00D6A46D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E7489AA2517D13D00D6A46D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8E7489AE2517D13F00D6A46D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E7489AF2517D13F00D6A46D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8E7489B42517D13F00D6A46D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8E7489B52517D13F00D6A46D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E7489B72517D13F00D6A46D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RM3F5X6445;
+				INFOPLIST_FILE = "LED Companion/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "dk.codeninja.LED-Companion";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8E7489B82517D13F00D6A46D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RM3F5X6445;
+				INFOPLIST_FILE = "LED Companion/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "dk.codeninja.LED-Companion";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E7489982517D13C00D6A46D /* Build configuration list for PBXProject "LED Companion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E7489B42517D13F00D6A46D /* Debug */,
+				8E7489B52517D13F00D6A46D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E7489B62517D13F00D6A46D /* Build configuration list for PBXNativeTarget "LED Companion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E7489B72517D13F00D6A46D /* Debug */,
+				8E7489B82517D13F00D6A46D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8E7489952517D13C00D6A46D /* Project object */;
+}
