@@ -16,7 +16,52 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+
+    NSString * display_width = [[NSUserDefaults standardUserDefaults] objectForKey:@"pref_width"];
+    NSString * display_height = [[NSUserDefaults standardUserDefaults] objectForKey:@"pref_height"];
+    NSString * host = [[NSUserDefaults standardUserDefaults] objectForKey:@"pref_host"];
+    NSString * port = [[NSUserDefaults standardUserDefaults] objectForKey:@"pref_port"];
+    
+    if (!display_width || !display_height || !host || !port) {
+        [self registerDefaultsFromSettingsBundle];
+        /*
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:^(BOOL success) {
+            
+        }];
+         */
+    }
+    
+    
     return YES;
+}
+
+
+
+
+-(void)registerDefaultsFromSettingsBundle
+{
+     NSString *settingsBundle = [[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"bundle"];
+     if(!settingsBundle) {
+         NSLog(@"Could not find Settings.bundle");
+         return;
+     }
+
+     NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:[settingsBundle stringByAppendingPathComponent:@"Root.plist"]];
+     NSArray *preferences = [settings objectForKey:@"PreferenceSpecifiers"];
+
+     NSMutableDictionary *defaultsToRegister = [[NSMutableDictionary alloc] initWithCapacity:[preferences count]];
+     for(NSDictionary *prefSpecification in preferences) {
+         NSString *key = [prefSpecification objectForKey:@"Key"];
+         if(key) {
+             [defaultsToRegister setObject:[prefSpecification objectForKey:@"DefaultValue"] forKey:key];
+             //NSLog(@"writing as default %@ to the key %@",[prefSpecification objectForKey:@"DefaultValue"],key);
+             [[NSUserDefaults standardUserDefaults] setObject:[prefSpecification objectForKey:@"DefaultValue"] forKey:key];
+         }
+     }
+
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultsToRegister];
 }
 
 

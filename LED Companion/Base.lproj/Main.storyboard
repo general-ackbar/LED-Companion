@@ -43,7 +43,7 @@
                                 <constraints>
                                     <constraint firstItem="RqR-SP-uE9" firstAttribute="leading" secondItem="75S-qq-jg7" secondAttribute="leading" id="Kh7-mF-B4q"/>
                                     <constraint firstAttribute="trailing" secondItem="RqR-SP-uE9" secondAttribute="trailing" id="OFl-Eb-Hrr"/>
-                                    <constraint firstAttribute="width" secondItem="75S-qq-jg7" secondAttribute="height" multiplier="187:140" id="Ov5-un-oVs"/>
+                                    <constraint firstAttribute="width" secondItem="75S-qq-jg7" secondAttribute="height" multiplier="187:140" identifier="aspect" id="Ov5-un-oVs"/>
                                     <constraint firstAttribute="bottom" secondItem="RqR-SP-uE9" secondAttribute="bottom" id="luA-ax-Vc0"/>
                                     <constraint firstItem="RqR-SP-uE9" firstAttribute="top" secondItem="75S-qq-jg7" secondAttribute="top" id="nvw-mJ-jTv"/>
                                 </constraints>

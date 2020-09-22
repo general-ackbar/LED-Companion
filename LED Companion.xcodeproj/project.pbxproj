@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E39E5BF2519D16900833670 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8E39E5BE2519D16900833670 /* Settings.bundle */; };
 		8E7489A22517D13D00D6A46D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7489A12517D13D00D6A46D /* AppDelegate.m */; };
 		8E7489A52517D13D00D6A46D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7489A42517D13D00D6A46D /* SceneDelegate.m */; };
 		8E7489A82517D13D00D6A46D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7489A72517D13D00D6A46D /* ViewController.m */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E39E5BE2519D16900833670 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		8E74899D2517D13D00D6A46D /* LED Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LED Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E7489A02517D13D00D6A46D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8E7489A12517D13D00D6A46D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				8E7489AE2517D13F00D6A46D /* LaunchScreen.storyboard */,
 				8E7489B12517D13F00D6A46D /* Info.plist */,
 				8E7489B22517D13F00D6A46D /* main.m */,
+				8E39E5BE2519D16900833670 /* Settings.bundle */,
 			);
 			path = "LED Companion";
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				8E7489AD2517D13F00D6A46D /* Assets.xcassets in Resources */,
 				8E98B9262518C706005170A2 /* WipeLED-black.png in Resources */,
 				8E7489AB2517D13D00D6A46D /* Main.storyboard in Resources */,
+				8E39E5BF2519D16900833670 /* Settings.bundle in Resources */,
 				8E98B9292518C706005170A2 /* LoadImage-black.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

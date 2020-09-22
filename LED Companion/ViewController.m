@@ -7,12 +7,15 @@
 
 #import "ViewController.h"
 
-#define HOST @"ledpi"
-#define PORT 8888
+//#define HOST @"ledpi"
+//#define PORT 8888
 
 @interface ViewController ()
 {
     Communicator *com;
+    NSString *host;
+    int port;
+    CGSize displaySize;
 }
 
 @end
@@ -23,44 +26,89 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadSettings) name:NSUserDefaultsDidChangeNotification object:nil];
+
     self.scrollView.delegate = self;
     self.scrollView.zoomScale = 1.0;
     scrollView.maximumZoomScale = 5.0;
     scrollView.minimumZoomScale = 1.0;
-    self.scrollView.clipsToBounds = YES;
+    scrollView.clipsToBounds = YES;
+    
+    
     
     com = [[Communicator alloc] init];
     com.delegate = self;
     
-    // Do any additional setup after loading the view.
+    /*
+    imageSource.image = [UIImage imageNamed:@"images"];
+    imageSource.contentMode = UIViewContentModeCenter;
+    [self.imageSource sizeToFit];
+    scrollView.contentSize = imageSource.frame.size;
+        
+    float min_factor = scrollView.frame.size.width / imageSource.image.size.width;
+    self.scrollView.minimumZoomScale = min_factor;
+    scrollView.zoomScale = min_factor;
+    */
 }
-- (IBAction)didTapLoad:(id)sender {
-    UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
-    ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; // | UIImagePickerControllerSourceTypeCamera;
-    ipc.allowsEditing = NO;
-    ipc.delegate = self;
-    [self presentViewController:ipc animated:YES completion:nil];
-}
-- (IBAction)didTapSend:(id)sender {
-    if(![com isConnected])
-        [com connectToServer:HOST onPort:PORT];
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self reloadSettings];
+}
+
+- (IBAction)didTapLoad:(id)sender {
+    UIAlertController *imagePickerAlert = [UIAlertController alertControllerWithTitle:@"Source" message:@"Select photo source." preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *selectCamera = [UIAlertAction actionWithTitle:@"Photo Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+        ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        ipc.allowsEditing = NO;
+        ipc.delegate = self;
+        [self presentViewController:ipc animated:YES completion:nil];
+
+        
+    }];
+    UIAlertAction *selectPhoto = [UIAlertAction actionWithTitle:@"Camera" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+        ipc.sourceType = UIImagePickerControllerSourceTypeCamera; 
+        ipc.allowsEditing = NO;
+        ipc.delegate = self;
+        [self presentViewController:ipc animated:YES completion:nil];
+
+        
+    }];
+    
+    [imagePickerAlert addAction:selectPhoto];
+    [imagePickerAlert addAction: selectCamera];
+    
+    [self presentViewController:imagePickerAlert animated:YES completion:^{
+        
+    }];
+    
+}
+
+- (IBAction)didTapSend:(id)sender {
+    
+    
+    if(![com isConnected])
+        [com connectToServer:host onPort:port];
 
     UIImage *img = [self imageFromView: self.scrollView];
+    img = [self resizeImage:img toSize:displaySize];
+    
     NSData *imageData = UIImagePNGRepresentation(img);
 
-    
     [com sendMessage:@"FILE=/screen.png"];
     [com sendData:imageData];
-    
-    
 }
 
 
 
 - (IBAction)didTapClear:(id)sender {
     if(![com isConnected])
-        [com connectToServer:HOST onPort:PORT];
+        [com connectToServer:host onPort:port];
     
     [com sendMessage:@"STOP"];
     
@@ -75,14 +123,10 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    
-    
     imageSource.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     imageSource.contentMode = UIViewContentModeCenter;
     [self.imageSource sizeToFit];
     scrollView.contentSize = imageSource.frame.size;
-    
-    
     
     float min_factor = scrollView.frame.size.width / imageSource.image.size.width;
     self.scrollView.minimumZoomScale = min_factor;
@@ -106,7 +150,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextRotateCTM(context, 2*M_PI); //otherwise it will be upside down due to diffrent coordinate systems
     
-    float destRatio = 128.0/96.0;
+    float destRatio = displaySize.width/displaySize.height;
     float srcRatio = view.frame.size.width / view.frame.size.height;
     CGRect crop;
     if(destRatio < srcRatio)
@@ -118,7 +162,6 @@
     
     CGContextTranslateCTM(context, -offset.x, -offset.y);
 
-    
     [view.layer renderInContext:context];
     
     UIImage *outputImage = [UIImage imageWithCGImage: CGImageCreateWithImageInRect(UIGraphicsGetImageFromCurrentImageContext().CGImage, crop)];
@@ -132,11 +175,48 @@
 {
     return imageSource;
 }
+
 - (void)didRecieveMessage:(NSString *)message {
     
     if([message isEqual:@"DONE"])
     {
         [com close];
+    }
+}
+
+- (UIImage *)resizeImage:(UIImage*) image toSize:(CGSize)newSize
+{
+    UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:newSize];
+    UIImage *output = [renderer imageWithActions:^(UIGraphicsImageRendererContext*_Nonnull myContext) {
+        [image drawInRect:(CGRect) {.origin = CGPointZero, .size = newSize}];
+    }];
+    return [output imageWithRenderingMode:image.renderingMode];
+}
+
+-(void)reloadSettings
+{
+    host = [[NSUserDefaults standardUserDefaults] objectForKey:@"pref_host"];
+    port = [[[NSUserDefaults standardUserDefaults] objectForKey:@"pref_port"] intValue];
+    displaySize = CGSizeMake([[[NSUserDefaults standardUserDefaults] objectForKey:@"pref_width"] intValue], [[[NSUserDefaults standardUserDefaults] objectForKey:@"pref_height"] intValue]);
+    
+    //Adapt to LED-display aspect ratio
+    for (NSLayoutConstraint *constraint in scrollView.constraints) {
+        if([constraint.identifier isEqual:@"aspect"])
+        {
+            NSLog(@"Before: %@", constraint);
+            [scrollView removeConstraint: constraint];
+            NSLayoutConstraint *aspect = [NSLayoutConstraint
+                                                  constraintWithItem:scrollView
+                                                  attribute:NSLayoutAttributeHeight
+                                                  relatedBy:NSLayoutRelationEqual
+                                                  toItem:scrollView
+                                                  attribute:NSLayoutAttributeWidth
+                                                  multiplier:displaySize.height/displaySize.width
+                                                  constant:0];
+            aspect.identifier = @"aspect";
+            [scrollView addConstraint:aspect];
+            NSLog(@"After: %@", aspect);
+        }
     }
 }
 
