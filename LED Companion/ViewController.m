@@ -203,7 +203,7 @@
     for (NSLayoutConstraint *constraint in scrollView.constraints) {
         if([constraint.identifier isEqual:@"aspect"])
         {
-            NSLog(@"Before: %@", constraint);
+            //NSLog(@"Before: %@", constraint);
             [scrollView removeConstraint: constraint];
             NSLayoutConstraint *aspect = [NSLayoutConstraint
                                                   constraintWithItem:scrollView
@@ -215,7 +215,7 @@
                                                   constant:0];
             aspect.identifier = @"aspect";
             [scrollView addConstraint:aspect];
-            NSLog(@"After: %@", aspect);
+            //NSLog(@"After: %@", aspect);
         }
     }
 }
